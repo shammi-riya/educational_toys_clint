@@ -1,24 +1,35 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Regester = () => {
    const [error,serError] = useState("")
-
+   const {createUserWithEmail} = useContext()
 
     const handleSighinUp = (e) => {
         e.preventDefault()
 
         const form = e.target
 
-        // const email = form.email.value;
+        const email = form.email.value;
         // const url = form.url.value;
         const password = form.password.value;
         const confirm= form.confrim.value;
-
+        serError(" ")
        if(password!==confirm){
        serError("your password not match")
        }else{
-        serError(" ")
+         createUserWithEmail(email,password)
+         .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user);
+            
+          })
+          .catch((error) => {
+            const errorMessage = error.message;
+           serError(errorMessage)
+            
+          });
+
        }
 
 

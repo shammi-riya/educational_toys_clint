@@ -1,11 +1,14 @@
-import  { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
 const Login = () => {
 
   const [errorMessage, setErrorMessage] = useState("")
+  const { login } = useContext()
 
+
+  
   const sighinInGoggol = () => {
     // setUsername(e.target.value);
   };
@@ -17,12 +20,20 @@ const Login = () => {
 
     const email = e.target.email.value
     const password = e.target.password.value
- setErrorMessage("")
+    setErrorMessage("")
     if (!email || !password) {
       setErrorMessage('Please enter your username and password.');
     } else {
 
-      // setErrorMessage("")
+      login(email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorMessage = error.message;
+          setErrorMessage(errorMessage);
+        });
 
     }
   };
