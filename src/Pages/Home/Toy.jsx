@@ -9,7 +9,7 @@ const {
     price
     
 } = toy || {} 
-console.log(toy);
+// console.log(toy);
 
     return (
       <div className="card w-full h-96 bg-base-100 shadow-xl relative transition-transform duration-300 transform hover:scale-105">

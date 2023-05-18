@@ -1,9 +1,11 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Regester = () => {
    const [error,serError] = useState("")
-   const {createUserWithEmail} = useContext()
+   const {createUserWithEmail} = useContext(AuthContext)
 
     const handleSighinUp = (e) => {
         e.preventDefault()
@@ -11,7 +13,8 @@ const Regester = () => {
         const form = e.target
 
         const email = form.email.value;
-        // const url = form.url.value;
+        const url = form.url.value;
+        const name = form.name.value;
         const password = form.password.value;
         const confirm= form.confrim.value;
         serError(" ")
@@ -22,6 +25,7 @@ const Regester = () => {
          .then((userCredential) => {
             const user = userCredential.user;
             console.log(user);
+            updateUserData(user, url, name)
             
           })
           .catch((error) => {
@@ -36,10 +40,37 @@ const Regester = () => {
         form.reset()
     }
 
+
+
+
+    const updateUserData = (user, url, name) => {
+        updateProfile(user, {
+            displayName: name, photoURL: url
+        }).then(() => {
+            // Profile updated!
+            // ...
+        }).catch((error) => {
+            serError(error.Message)
+        });
+
+    }
+
+
+
     return (
         <div className='border-2 w-1/2 mx-auto my-8 shadow-md'>
             <form onSubmit={handleSighinUp} className="card-body p-10">
                 <h3 className='text-center text-2xl font-bold'>Sighin Up</h3>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Name</span>
+                    </label>
+                    <input type="text"
+                        name='name'
+                        placeholder="Your Name"
+                        required
+                        className="input input-bordered" />
+                </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Email</span>

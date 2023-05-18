@@ -1,5 +1,5 @@
-import  { createContext, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import  { createContext, useEffect, useState } from 'react';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../Firebase/Firebase.config';
 import { GoogleAuthProvider } from "firebase/auth";
 
@@ -28,11 +28,35 @@ const AuthProvider = ({children}) => {
         setLoaders(false)
      return  signInWithPopup(auth,provider)
     }
+
+
+   
+    useEffect(()=>{
+      const unScribe = onAuthStateChanged(auth,currentUser=>{
+        setUsers(currentUser);
+        setLoaders(false);
+
+      })
+
+      return ()=>{
+        return unScribe()
+      }
+    },[])
+
+
+
+    const logOut = () => {
+        setLoaders(true);
+        return signOut(auth);
+    }
+
+
   
 const AuthUsersInfo ={
     users,
     loaders,
     login,
+    logOut,
     sighinGogool,
     createUserWithEmail
 }

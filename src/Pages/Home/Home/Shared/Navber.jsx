@@ -1,8 +1,30 @@
 // import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../../../assets/logo/logo.jpg'
+import { useContext} from 'react';
+import { AuthContext } from '../../../../Provider/AuthProvider';
+
+
 
 const Navber = () => {
+
+  const {users, logOut} = useContext(AuthContext)
+  console.log(users);
+  const handleSighinOut = ()=>{
+   
+      logOut()
+        .then(() => {
+          // Sign-out successful.
+        }).catch((error) => {
+          console.log(error);
+        });
+    
+  
+  }
+
+
+
+
     return (
        
             <div className="navbar bg-base-100">
@@ -28,19 +50,39 @@ const Navber = () => {
     <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? " border-b-4 border-yellow-900" : ""}  to="/mytoys">MyToys</NavLink></li>
     <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? "border-b-4 border-yellow-900 " : ""}  to="/add">AddToys</NavLink></li>
     <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? "border-b-4 border-yellow-900" : ""}  to="/blogs">Blogs</NavLink></li>
-    <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? "border-b-4 border-yellow-900" : ""}  to="/login">Login</NavLink></li>
-     
+   
+    
      
      
      
     </ul>
   </div>
   <div className="navbar-end">
-  <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-        </div>
-      </label>
+   
+  
+
+    
+       <div >
+      {
+        users ? <div className='flex gap-6'> 
+     <div>
+     <button className='rounded-md py-2 px-3 bg-yellow-900 text-white' onClick={handleSighinOut}>SighinOut</button>
+     </div>
+        
+        <div className="w-10 h-10 rounded-full">
+        <img src={users.photoURL} className="tooltip" title={`${users?.displayName}`}/>
+      </div>
+      
+      </div>
+      :
+      
+      <>
+      <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? "border-b-4 border-yellow-900" : ""}  to="/login">Login</NavLink></li>
+      
+      </>
+      }
+       </div>
+     
   </div>
 </div>
        

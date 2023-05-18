@@ -1,16 +1,26 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const Login = () => {
 
   const [errorMessage, setErrorMessage] = useState("")
-  const { login } = useContext()
+  const { login,sighinGogool } = useContext(AuthContext)
 
 
-  
+
   const sighinInGoggol = () => {
-    // setUsername(e.target.value);
+    sighinGogool()
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log(user);
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+      setErrorMessage(errorMessage);
+    });
+
   };
 
 
