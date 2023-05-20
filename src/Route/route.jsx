@@ -56,12 +56,12 @@ const router = createBrowserRouter([
         {
           path: "/toydetails/:id",
           element:<PrivetRoute><Toydetails></Toydetails></PrivetRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+          loader:({params})=>fetch(`https://eduvcational-learning-surver.vercel.app/toys/${params.id}`)
         },
         {
           path: "/allToy/:id",
           element:<UpdateToys></UpdateToys>,
-          loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+          loader:({params})=>fetch(` https://eduvcational-learning-surver.vercel.app/toys/${params.id}`)
         },
         {
           path:'blog',

@@ -16,7 +16,7 @@ const AddToysFrom = () => {
     const { register, handleSubmit,  reset } = useForm();
     const onSubmit = data => {
        
-    fetch("http://localhost:5000/postToy",{
+    fetch("https://eduvcational-learning-surver.vercel.app/postToy",{
         method:"POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

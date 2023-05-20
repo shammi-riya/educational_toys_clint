@@ -11,7 +11,7 @@ const Mytoys = () => {
     const [myToysData,setMyToysData] =useState([])
   
    useEffect(()=>{
-  fetch(`http://localhost:5000/allToy?email=${users?.email}`)
+  fetch(`https://eduvcational-learning-surver.vercel.app/allToy?email=${users?.email}`)
   .then(res=>res.json())
   .then(data=>setMyToysData(data))
    },[users])
@@ -32,7 +32,7 @@ const Mytoys = () => {
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/allToy/${id}`,{
+          fetch(` https://eduvcational-learning-surver.vercel.app/allToy/${id}`,{
                   method:"DELETE"
                 })
                 .then(res=>res.json())
