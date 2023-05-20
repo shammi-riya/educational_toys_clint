@@ -1,9 +1,16 @@
 // import React from 'react';
 
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../../Provider/AuthProvider";
+// import { Rating } from '@smastrom/react-rating'
+
+
 
 const AddToysFrom = () => {
 
+
+  const {users} = useContext(AuthContext)
 
     const { register, handleSubmit,  reset } = useForm();
     const onSubmit = data => {
@@ -24,17 +31,6 @@ const AddToysFrom = () => {
     }
         
        
-
-
-
-
-       
-
-
-
-const user = {
-    email:"R@gmail.com"
-}
 
     return (
         <div className="bg-slate-300 my-11 p-12">
@@ -66,7 +62,7 @@ const user = {
     <div className="grid grid-cols-2 gap-5 my-5">
     <input
               className="text-input py-3 px-3"
-              value={user?.email}
+              value={users?.email}
               {...register("Useremail")}
               placeholder="seller email"
               type="email"

@@ -1,13 +1,15 @@
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const Login = () => {
+  const navigate = useNavigate()
+  const location = useLocation()
 
   const [errorMessage, setErrorMessage] = useState("")
   const { login,sighinGogool } = useContext(AuthContext)
-
+const from = location.state?.from?.pathname || "/"
 
 
   const sighinInGoggol = () => {
@@ -15,10 +17,11 @@ const Login = () => {
     .then((userCredential) => {
       const user = userCredential.user;
       console.log(user);
+      navigate(from ,{replace:true})
     })
     .catch((error) => {
       const errorMessage = error.message;
-      setErrorMessage(errorMessage);
+     console.log(errorMessage);
     });
 
   };
@@ -31,14 +34,14 @@ const Login = () => {
     const email = e.target.email.value
     const password = e.target.password.value
     setErrorMessage("")
-    if (!email || !password) {
-      setErrorMessage('Please enter your username and password.');
-    } else {
+   
+      {
 
       login(email, password)
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user);
+          navigate(from ,{replace:true})
         })
         .catch((error) => {
           const errorMessage = error.message;
@@ -61,6 +64,7 @@ const Login = () => {
             </label>
             <input type="email"
               name='email'
+              required
               placeholder="email"
               className="input input-bordered" />
           </div>
@@ -70,6 +74,7 @@ const Login = () => {
             </label>
             <input type="password"
               name='password'
+              required
               placeholder="password"
               className="input input-bordered" />
 

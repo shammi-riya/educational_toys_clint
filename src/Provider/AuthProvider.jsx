@@ -13,19 +13,19 @@ const AuthProvider = ({children}) => {
 
 
     const createUserWithEmail = (email,password)=>{
-        setLoaders(false)
+        setLoaders(true)
         return createUserWithEmailAndPassword(auth,email,password)
     }
 
 
     const login =(email,password)=>{
-        setLoaders(false)
+        setLoaders(true)
        return signInWithEmailAndPassword(auth,email,password)
     }
 
 
     const sighinGogool = ()=>{
-        setLoaders(false)
+        setLoaders(true)
      return  signInWithPopup(auth,provider)
     }
 
