@@ -1,9 +1,8 @@
-// import React from 'react';
+
 
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Provider/AuthProvider";
-// import { Rating } from '@smastrom/react-rating'
 
 
 

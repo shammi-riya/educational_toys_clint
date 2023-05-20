@@ -4,6 +4,7 @@ import ToysTble from '../ToysTble';
 import { AuthContext } from '../../../../Provider/AuthProvider';
 
 const Mytoys = () => {
+
     const {users} = useContext(AuthContext)
     const [myToysData,setMyToysData] =useState([])
   
@@ -11,7 +12,7 @@ const Mytoys = () => {
   fetch(`http://localhost:5000/allToy?email=${users?.email}`)
   .then(res=>res.json())
   .then(data=>setMyToysData(data))
-   },[])
+   },[users])
 
 
   
@@ -30,7 +31,7 @@ const Mytoys = () => {
       }
   
 
-
+   
 
 
 // console.log(myToysData);
@@ -57,6 +58,7 @@ const Mytoys = () => {
                     index={index}
                          key={singleToys._id}
                          handleDelete={handleDelete}
+                        
                     singleToys={singleToys}
 >
                     </ToysTble>

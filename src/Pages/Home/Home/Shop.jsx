@@ -17,8 +17,8 @@ const Shop = () => {
     setActiveTab(tabName);
   };
     return (
-        <div className="my-28">
-      <div className="text-center">
+        <div className="my-32">
+      <div className="text-center my-8">
         <div className="flex border-b-2 my-5 w-1/2 mx-auto justify-center items-center">
           <div
             onClick={() => handleTabClick("All")}

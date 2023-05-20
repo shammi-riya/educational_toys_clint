@@ -1,4 +1,4 @@
-import React from 'react';
+
 import lottianimation from '../assets/lotteii.json'
 import Lottie from 'lottie-react'
 

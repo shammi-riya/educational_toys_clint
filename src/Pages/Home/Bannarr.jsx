@@ -21,7 +21,9 @@ const Bannarr = () => {
    
     <div className=' absolute  flex items-center h-full left-0 top-0 right-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]'>
           
-         <div className='text-center w-[60%] mx-auto space-y-4'>
+         <div 
+         
+         className='text-center w-[60%] mx-auto space-y-4'>
             <p className='text-bold text-white'>Welcome to Educational Toys</p>
          <h1 className='text-5xl text-white font-bold'>The majic place <br /> of educational toys <br /> for your baby</h1>
          <button className='py-3 px-7 bg-yellow-900 text-white text-xl'>Shop Now</button>

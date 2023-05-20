@@ -1,11 +1,12 @@
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 
 const Regester = () => {
    const [error,serError] = useState("")
-   const {createUserWithEmail} = useContext(AuthContext)
+   const {createUserWithEmail,logOut} = useContext(AuthContext)
+   const navigate = useNavigate()
 
     const handleSighinUp = (e) => {
         e.preventDefault()
@@ -26,7 +27,14 @@ const Regester = () => {
             const user = userCredential.user;
             console.log(user);
             updateUserData(user, url, name)
-            
+            logOut()
+            .then(() => {
+              // Sign-out successful.
+            }).catch((error) => {
+              console.log(error);
+            });
+            navigate("/login")
+           
           })
           .catch((error) => {
             const errorMessage = error.message;
@@ -37,7 +45,7 @@ const Regester = () => {
        }
 
 
-        form.reset()
+        
     }
 
 
