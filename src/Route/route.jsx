@@ -12,6 +12,7 @@ import Login from "../Pages/Login/Login";
 import Regester from "../Pages/Login/regester";
 import Toydetails from "../Pages/Home/Home/Toydetails";
 import PrivetRoute from "./PrivetRoute";
+import Blog from "../Pages/Blog";
 
 
 
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
           element:<Toydetails></Toydetails>,
           loader:({params})=>fetch(`http://localhost:5000/allToy/${params.id}`)
         },
+        {
+          path:'blog',
+          element:<Blog></Blog>
+        }
       ],
     },
   ]);

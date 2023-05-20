@@ -49,7 +49,7 @@ const Navber = () => {
     <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? "border-b-4 border-yellow-900  " : ""}  to="/">Home</NavLink></li>
     <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? " border-b-4 border-yellow-900" : ""}  to="/mytoys">MyToys</NavLink></li>
     <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? "border-b-4 border-yellow-900 " : ""}  to="/add">AddToys</NavLink></li>
-    <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? "border-b-4 border-yellow-900" : ""}  to="/blogs">Blogs</NavLink></li>
+    <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? "border-b-4 border-yellow-900" : ""}  to="/blog">Blogs</NavLink></li>
    
     
      
