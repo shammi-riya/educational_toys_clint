@@ -2,6 +2,7 @@ import  { useContext, useEffect, useState } from 'react';
 
 import ToysTble from '../ToysTble';
 import { AuthContext } from '../../../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Mytoys = () => {
 
@@ -14,21 +15,47 @@ const Mytoys = () => {
   .then(data=>setMyToysData(data))
    },[users])
 
-
+   
   
-    const handleDelete= (id)=>{
-        fetch(`http://localhost:5000/allToy/${id}`,{
-          method:"DELETE"
-        })
-        .then(res=>res.json())
-        .then(data=>{
-          if(data.deletedCount>0){
-              alert("delete success")
-              const remaining = myToysData.filter(toys=>toys._id !== id);
-            setMyToysData(remaining)
-          }
-        })
-      }
+
+
+
+  const handleDelete= (id)=>{
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+          fetch(`http://localhost:5000/allToy/${id}`,{
+                  method:"DELETE"
+                })
+                .then(res=>res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        Swal.fire(
+                            'Deleted!',
+                            'Your toy has been deleted.',
+                            'success'
+                        )
+                        const remaining = myToysData.filter(toys=>toys._id !== id);
+                         setMyToysData(remaining)
+                    }
+                })
+
+        }
+    })
+}
+
+
+const handleOnchange = (e)=>{
+  console.log(e.target.value);
+}
   
 
    
@@ -36,7 +63,15 @@ const Mytoys = () => {
 
 // console.log(myToysData);
     return (
-        <table className=" table table-zebra w-full">
+      <div className=''>
+        <div>
+        <select onChange={handleOnchange} className="select select-bordered w-full max-w-xs">
+  <option disabled selected>Who shot first?</option>
+  <option>descending </option>
+  <option>Asending</option>
+</select>
+        </div>
+          <table className=" table table-zebra w-full">
         {/* head */}
         <thead>
             <tr className='font-bold mr-3'>
@@ -66,6 +101,7 @@ const Mytoys = () => {
             }
         </tbody>
         </table>
+      </div>
     );
 };
 

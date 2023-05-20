@@ -5,6 +5,11 @@ import router from './Route/route.jsx'
 import { RouterProvider } from 'react-router-dom'
 import AuthProvider from './Provider/AuthProvider'
 
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+
+
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

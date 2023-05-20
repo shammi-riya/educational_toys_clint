@@ -18,6 +18,7 @@ const Shop = () => {
   };
     return (
         <div className="my-32">
+          <h2 className='text-3xl font-bold text-center'>Shop By Catogory</h2>
       <div className="text-center my-8">
         <div className="flex border-b-2 my-5 w-1/2 mx-auto justify-center items-center">
           <div
@@ -62,7 +63,7 @@ const Shop = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid lg:px-0 px-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
        {
         toys.map(toy=>
         <Toy
