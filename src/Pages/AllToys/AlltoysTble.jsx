@@ -1,25 +1,15 @@
-import  { useContext } from 'react';
-import { AuthContext } from '../../Provider/AuthProvider';
 
 const AlltoysTble = ({singleToy,index}) => {
 
-   
- const {users} = useContext(AuthContext)
+  
 
-
- 
-
-
-
-
-
-    const {catogory,quintity,toyName,price} = singleToy
-    
+    const {catogory,quintity,toyName,price,UserName,Useremail} = singleToy
+    console.log(Useremail);
     return (
         <tbody className=''>
              <tr className='hover text-bold'>
         <th>{index+1}</th>
-        <td>{users?.displayName}</td>
+        <td>{UserName}</td>
         <td>{toyName}</td>
         <td>{catogory}</td>
         <td>{price}</td>

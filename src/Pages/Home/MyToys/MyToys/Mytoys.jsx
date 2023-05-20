@@ -3,9 +3,10 @@ import  { useContext, useEffect, useState } from 'react';
 import ToysTble from '../ToysTble';
 import { AuthContext } from '../../../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import useTitle from '../../../../Hook/UseTitle';
 
 const Mytoys = () => {
-
+    useTitle("Educational Toys || MyToys")
     const {users} = useContext(AuthContext)
     const [myToysData,setMyToysData] =useState([])
   

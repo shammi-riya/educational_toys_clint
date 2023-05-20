@@ -4,11 +4,12 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../../Hook/UseTitle";
 
 
 
 const AddToysFrom = () => {
-
+  useTitle("Educational Toys || AddToys")
 
   const {users} = useContext(AuthContext)
 
@@ -78,6 +79,13 @@ const AddToysFrom = () => {
               {...register("Useremail")}
               placeholder="seller email"
               type="email"
+            />
+    <input
+              className="text-input py-3 px-3"
+              value={users?.displayName}
+              {...register("UserName")}
+              placeholder="seller name"
+              type="text"
             />
       
       

@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import Toy from '../Toy';
-// import Toy from '../Toy';
+
 
 const Shop = () => {
     const [toys, setToys] = useState([]);
   const [activeTab, setActiveTab] = useState("All");
+ 
 
   useEffect(() => {
     fetch(`http://localhost:5000/allToy/${activeTab}`)

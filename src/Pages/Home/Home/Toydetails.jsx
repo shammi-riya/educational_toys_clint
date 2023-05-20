@@ -3,11 +3,11 @@ import { useContext } from 'react';
 import { useLoaderData} from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import {  IoIosStarOutline} from "react-icons/io";
+import useTitle from '../../../Hook/UseTitle';
 const Toydetails = () => {
     const toydetails = useLoaderData()
-    console.log(toydetails);
     const {users} = useContext(AuthContext)
-
+    useTitle("Educational Toys || ToyDetails")
     const {image,quintity,price,rating,toyName,description} = toydetails;
    
 

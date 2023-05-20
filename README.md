@@ -12,6 +12,7 @@
 ## Resources & Credits
 
 ####  Text  -> [tailwind css](https://tailwindcss.com/)
+####  Animation  -> [Aos pakej](https://www.npmjs.com/package/aos)
 
 
 

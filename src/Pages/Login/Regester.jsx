@@ -2,11 +2,13 @@ import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import useTitle from '../../Hook/UseTitle';
 
 const Regester = () => {
    const [error,serError] = useState("")
    const {createUserWithEmail,logOut} = useContext(AuthContext)
    const navigate = useNavigate()
+   useTitle("Regester")
 
     const handleSighinUp = (e) => {
         e.preventDefault()

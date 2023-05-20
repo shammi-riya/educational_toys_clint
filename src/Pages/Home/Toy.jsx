@@ -17,8 +17,7 @@ const {
     _id
     
 } = toy || {} 
-// console.log(toy);
-// transition-transform duration-300 transform hover:scale-105
+
     return (
       <div 
       // data-aos="fade-top"
@@ -32,9 +31,9 @@ const {
 
 
     
-      <div className="card-body p-3">
+      <div className="card-body p-4">
        <div>
-       <div className='flex justify-between px-2 items-center space-y-2'>
+       <div className='flex justify-between  items-center space-y-2'>
        <h3 className=" text-slate-800 font-bold text-xl">
           {toyName}        
         </h3>
@@ -44,7 +43,7 @@ const {
        </div>
               
         <Rating className='mb-4'
-                        style={{ maxWidth: 150 }}
+                        style={{ maxWidth: 100 }}
                         value={Math.round(rating || 0)} readOnly />
     
        </div>

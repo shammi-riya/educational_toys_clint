@@ -1,8 +1,10 @@
 
+import useTitle from '../Hook/UseTitle';
 import lottianimation from '../assets/lotteii.json'
 import Lottie from 'lottie-react'
 
 const Blog = () => {
+  useTitle("Educational Toys || Blogs")
     return (
         <div className='grid lg:grid-cols-2 grid-cols-1'>
               <div className='h-[75%]'>
