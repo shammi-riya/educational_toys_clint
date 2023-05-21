@@ -49,7 +49,7 @@ On All Kids Education Toys</h2>
         <div className="absolute top-1/2 left-96  grid grid-flow-col gap-5 text-center auto-cols-max p-16  ">
        
       <div className="flex flex-col p-2 bg-gradient-to-r from-pink-300 via-red-500 to-yellow-900  rounded-box text-neutral-content">
-        <span className="countdown font-mono text-5xl ml-4">
+        <span className="countdown font-mono text-5xl ml-2">
           <span style={{ '--value': days }}></span>
         </span>
         days

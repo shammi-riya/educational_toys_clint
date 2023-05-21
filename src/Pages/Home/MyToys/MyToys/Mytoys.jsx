@@ -6,12 +6,12 @@ import Swal from 'sweetalert2';
 import useTitle from '../../../../Hook/UseTitle';
 
 const Mytoys = () => {
-    useTitle("Educational Toys || MyToys")
+    useTitle("Educational Toys | MyToys")
     const {users} = useContext(AuthContext)
 
 
     const [myToysData,setMyToysData] =useState([])
-    const [sortOrder, setSortOrder] = useState('');
+    const [sortOrder, setSortOrder] = useState("assending");
 
 
     const handleshorting = (data) => {
@@ -21,7 +21,7 @@ const Mytoys = () => {
 
 
 useEffect(()=>{
-  fetch(`http://localhost:5000/toysAlll/${sortOrder}`)
+  fetch(`https://eduvcational-learning-surver.vercel.app/toysAlll/${sortOrder}`)
   .then(res=>res.json())
   .then(data=>setMyToysData(data))
 },[sortOrder])
@@ -80,10 +80,10 @@ useEffect(()=>{
 
 
     return (
-      <div className=''>
-        <div>
-     <button className='py-2 px-3 bg-yellow-900 text-xl font-bold' onClick={()=> handleshorting ("assending")} >Assending</button>
-     <button className='py-2 px-3 border-1 border-yellow-900 text-xl font-bold text-yellow-900' onClick={()=> handleshorting ("descending")}>desending</button>
+      <div className='my-6'>
+        <div className='my-6'>
+     <button className='py-2 px-3 border-2 text-slate-200 bg-yellow-900 text-xl font-bold' onClick={()=> handleshorting ("assending")} >Assending</button>
+     <button className='py-2 px-3 border-2 ml-3 border-yellow-900 text-xl font-bold text-yellow-900' onClick={()=> handleshorting ("descending")}>desending</button>
 
    
     </div>
