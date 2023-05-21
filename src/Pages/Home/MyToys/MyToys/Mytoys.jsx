@@ -14,23 +14,20 @@ const Mytoys = () => {
     const [sortOrder, setSortOrder] = useState('');
 
 
-    const handleOnChange = (e) => {
-      setSortOrder(e.target.value);
+    const handleAssending = (a) => {
+      setSortOrder(a)
     };
 
 
-    const fetchToys = async () => {
-      try {
-        const response = await fetch(`https://eduvcational-learning-surver.vercel.app/toysAll?sort=${sortOrder}`);
-        const data = await response.json();
-        console.log(data);
-        // Process the sorted toys data
-        setMyToysData(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-  
+
+useEffect(()=>{
+  fetch(`http://localhost:5000/toysAlll/${sortOrder}`)
+  .then(res=>res.json())
+  .then(data=>setMyToysData(data))
+},[sortOrder])
+
+
+    
 
 
 
@@ -86,13 +83,10 @@ const Mytoys = () => {
     return (
       <div className=''>
         <div>
-      <select onChange={handleOnChange} className="select select-bordered w-full max-w-xs">
-        <option disabled selected>Who shot first?</option>
-        <option value="descending">Descending</option>
-        <option value="ascending">Ascending</option>
-      </select>
+     <button className='btn' onClick={()=>handleAssending("assending")} >Assending</button>
+     <button className='btn' onClick={()=>handleAssending("descending")}>desending</button>
 
-      <button onClick={fetchToys}>Fetch Toys</button>
+   
     </div>
           <table className=" table table-zebra w-full">
         {/* head */}

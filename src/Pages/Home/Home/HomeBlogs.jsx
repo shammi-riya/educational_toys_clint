@@ -2,10 +2,7 @@
 import blog1 from '../../../assets/blog/2.webp'
 import blog2 from '../../../assets/blog/4.webp'
 import blog3 from '../../../assets/blog/5.webp'
-// import AOS from 'aos';
-// import 'aos/dist/aos.css'; // You can also use <link> for styles
 
-// AOS.init();
 
 const HomeBlogs = () => {
     return (

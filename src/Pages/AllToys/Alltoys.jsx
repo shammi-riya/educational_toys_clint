@@ -8,6 +8,9 @@ const Alltoys = () => {
  const [data,setData] = useState([])
  useTitle("Educational Toys || AllToys")
  const [searchText,setSearchtext] = useState("")
+
+
+
     useEffect(()=>{
      fetch(" https://eduvcational-learning-surver.vercel.app/toysAll")
      .then(res=>res.json())
@@ -23,7 +26,9 @@ const Alltoys = () => {
             setData(data);
           });
       };
-     
+   
+      
+      
     return (
         <div className='mb-6'>
            <div className='flex gap-2 text-center w-1/2 my-6 mx-auto'>

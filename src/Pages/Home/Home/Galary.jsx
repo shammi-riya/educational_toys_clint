@@ -41,7 +41,10 @@ const Galary = () => {
     data-aos-anchor-placement="top-center"
     
    
-        className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:h-[600px]'>
+ className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:h-[600px]'>
+
+
+
             <div className=' border-2 mx-auto overflow-hidden max-w-xs  relative  bg-cover bg-no-repeat w-full'>
             <img className='border-2 w-full max-w-xs  transition duration-300 ease-in-out hover:scale-110  bg-fixed  bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]' src={img1} alt="" />
          </div>
