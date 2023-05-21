@@ -1,18 +1,32 @@
 
+import { useEffect } from 'react';
 import blog1 from '../../../assets/blog/2.webp'
 import blog2 from '../../../assets/blog/4.webp'
 import blog3 from '../../../assets/blog/5.webp'
 
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 const HomeBlogs = () => {
+
+
+
+   useEffect(() => {
+      AOS.init();
+      AOS.refresh();
+    }, [])
     return (
        <div  
        
        className='my-8'>
-        <div  className='text-center my-7'>
+        <div  data-aos="fade-left"
+      data-aos-delay="100"
+      data-aos-duration="1000"
+        className='text-center my-7'>
         <h3 className=' text-4xl font-bold'>Our Latest Blog</h3>
         </div>
-         <div   
+         <div    data-aos="fade-bottom"
+      data-aos-delay="100"
+      data-aos-duration="1000"
          className='grid lg:grid-cols-3 gap-8 md:grid-cols-2 grid-cols-1'>
             <div className=' '>
             <img className='h-1/2 duration-700 ease-in w-full transition-transform  transform hover:scale-105 hover:duration-700' src={blog1} alt="" />

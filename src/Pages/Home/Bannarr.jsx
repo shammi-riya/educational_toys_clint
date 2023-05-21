@@ -5,9 +5,18 @@ import bannrimg3 from '../../assets/logo/bannr4.jpg'
 import bannrimg4 from '../../assets/logo/bannr2.jpg'
 import bannrimg5 from '../../assets/logo/bannar1.jpg'
 import bannrimg6 from '../../assets/logo/bannar7.avif'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react'
 
 
 const Bannarr = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
+  
     return (
         <div>
             
@@ -21,7 +30,9 @@ const Bannarr = () => {
    
     <div className=' absolute  flex items-center h-full left-0 top-0 right-0 bottom-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]'>
           
-         <div 
+         <div  data-aos="fade-right"
+      data-aos-delay="50"
+      data-aos-duration="1000"
          
          className='text-center w-[60%] mx-auto space-y-4'>
             <p className='text-bold text-white'>Welcome to Educational Toys</p>

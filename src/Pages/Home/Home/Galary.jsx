@@ -26,7 +26,11 @@ const Galary = () => {
 
 
        className='my-24'>
-         <div className='text-center text-4xl font-bold my-12'>
+         <div 
+         data-aos="fade-right"
+         data-aos-delay="50"
+         data-aos-duration="1000"
+         className='text-center text-4xl font-bold my-12'>
             <h1>Our Lates Products</h1>
 
             

@@ -13,6 +13,8 @@ const Toy = ({toy}) => {
     AOS.init();
     AOS.refresh();
   }, []);
+
+  
 const {
  
   toyName,

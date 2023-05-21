@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
 import Toy from '../Toy';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Shop = () => {
     const [toys, setToys] = useState([]);
   const [activeTab, setActiveTab] = useState("All");
- 
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   useEffect(() => {
     fetch(`https://eduvcational-learning-surver.vercel.app/allToy/${activeTab}`)
@@ -19,7 +23,12 @@ const Shop = () => {
   };
     return (
         <div className="my-32">
-          <h2 className='text-3xl font-bold text-center'>Shop By Catogory</h2>
+          <div data-aos="fade-left"
+      data-aos-delay="100"
+      data-aos-duration="1000">
+ <h2 className='text-3xl font-bold text-center'>Shop By Catogory</h2>
+          </div>
+         
       <div className="text-center my-8">
         <div className="flex border-b-2 my-5 w-1/2 mx-auto justify-center items-center">
           <div
