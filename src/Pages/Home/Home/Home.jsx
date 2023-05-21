@@ -1,5 +1,6 @@
 // import React from 'react';
 import Bannarr from '../Bannarr';
+import Offers from '../Offers';
 import Feature from './Feature';
 import Galary from './Galary';
 import HomeBlogs from './HomeBlogs';
@@ -15,7 +16,7 @@ const Home = () => {
           <Feature></Feature>
           <Galary></Galary>
           <Shop></Shop>
-         
+         <Offers></Offers>
           <HomeBlogs></HomeBlogs>
         
           

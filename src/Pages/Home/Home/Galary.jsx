@@ -1,7 +1,6 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
-// // ..
-// AOS.init();
+
 import { useEffect } from 'react'
 import img1 from '../../../assets/galary/61Lgl--OLsL._SL1000_.jpg'
 import img2 from '../../../assets/galary/a.webp'
@@ -14,11 +13,14 @@ const Galary = () => {
 
 
 
-   //useEffect
+   // aos
   useEffect(() => {
    AOS.init();
    AOS.refresh();
  }, []);
+
+
+
     return (
        <div 
 

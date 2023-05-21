@@ -23,7 +23,7 @@ const Alltoys = () => {
             setData(data);
           });
       };
-   
+     
     return (
         <div className='mb-6'>
            <div className='flex gap-2 text-center w-1/2 my-6 mx-auto'>

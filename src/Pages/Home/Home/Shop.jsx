@@ -8,7 +8,7 @@ const Shop = () => {
  
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allToy/${activeTab}`)
+    fetch(`https://eduvcational-learning-surver.vercel.app/allToy/${activeTab}`)
       .then((res) => res.json())
       .then((data) => setToys(data))
       .catch((error) => console.error("Error fetching toys:", error));
