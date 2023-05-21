@@ -50,8 +50,12 @@ const Navber = () => {
     <ul className="menu menu-horizontal px-2 text-xl">
     <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? "border-b-4 border-yellow-900  " : ""}  to="/">Home</NavLink></li>
     <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? "border-b-4 border-yellow-900  " : ""}  to="/alltoys">All Toys</NavLink></li>
-    <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? " border-b-4 border-yellow-900" : ""}  to="/mytoys">MyToys</NavLink></li>
+  {
+    users && <>
+      <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? " border-b-4 border-yellow-900" : ""}  to="/mytoys">MyToys</NavLink></li>
     <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? "border-b-4 border-yellow-900 " : ""}  to="/add">AddToys</NavLink></li>
+    </>
+  }
     <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? "border-b-4 border-yellow-900" : ""}  to="/blog">Blogs</NavLink></li>
    
     
