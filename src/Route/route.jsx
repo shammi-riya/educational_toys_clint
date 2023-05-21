@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         {
           path: "/allToy/:id",
           element:<UpdateToys></UpdateToys>,
-          loader:({params})=>fetch(` https://eduvcational-learning-surver.vercel.app/toys/${params.id}`)
+          loader:({params})=>fetch(` https://eduvcational-learning-surver.vercel.app/toysId/${params.id}`)
         },
         {
           path:'blog',
