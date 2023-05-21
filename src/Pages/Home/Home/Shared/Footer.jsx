@@ -32,7 +32,7 @@ const Footer = () => {
     
   </div> 
   <div>
-   
+  <p>&copy; 2023 Your Educational toys. All rights reserved.</p>
     </div>
   </div>
 </footer>
