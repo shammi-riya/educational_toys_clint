@@ -36,8 +36,12 @@ const Navber = () => {
       <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
       <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? "border-b-4 border-yellow-900  " : ""}  to="/">Home</NavLink></li>
     <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? "border-b-4 border-yellow-900  " : ""}  to="/alltoys">All Toys</NavLink></li>
-    <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? " border-b-4 border-yellow-900" : ""}  to="/mytoys">MyToys</NavLink></li>
+  {
+    users && <>
+      <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? " border-b-4 border-yellow-900" : ""}  to="/mytoys">MyToys</NavLink></li>
     <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? "border-b-4 border-yellow-900 " : ""}  to="/add">AddToys</NavLink></li>
+    </>
+  }
     <li className='px-2 text-yellow-900'><NavLink className={({ isActive }) => isActive ? "border-b-4 border-yellow-900" : ""}  to="/blog">Blogs</NavLink></li>
    
     

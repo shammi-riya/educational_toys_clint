@@ -7,7 +7,7 @@
 #### Documentation Link -> [Link](https://reactrouter.com/en/main/start/overview)
 
 
-#### liveSite -> [LiveSite](https://educational-larning.web.app/#slide1)
+#### liveSite -> [LiveSite](https://educational-larning.web.app)
 
 ## Resources & Credits
 
