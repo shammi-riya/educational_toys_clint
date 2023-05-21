@@ -14,8 +14,8 @@ const Mytoys = () => {
     const [sortOrder, setSortOrder] = useState('');
 
 
-    const handleAssending = (a) => {
-      setSortOrder(a)
+    const handleshorting = (data) => {
+      setSortOrder(data)
     };
 
 
@@ -79,12 +79,11 @@ useEffect(()=>{
  
 
 
-// console.log(myToysData);
     return (
       <div className=''>
         <div>
-     <button className='btn' onClick={()=>handleAssending("assending")} >Assending</button>
-     <button className='btn' onClick={()=>handleAssending("descending")}>desending</button>
+     <button className='py-2 px-3 bg-yellow-900 text-xl font-bold' onClick={()=> handleshorting ("assending")} >Assending</button>
+     <button className='py-2 px-3 border-1 border-yellow-900 text-xl font-bold text-yellow-900' onClick={()=> handleshorting ("descending")}>desending</button>
 
    
     </div>
