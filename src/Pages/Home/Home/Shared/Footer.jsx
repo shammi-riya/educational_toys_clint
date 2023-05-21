@@ -28,7 +28,7 @@ const Footer = () => {
   <div>
     <span className="footer-title">Contuct</span> 
     <a className="link link-hover"><p className='mt-4'>Monday to Friday 9 a.m. - 5 p.m.</p></a> 
-    <a className="link link-hover"><p className='my-4'><span><HiPhone></HiPhone></span> 012 34 5677</p></a> 
+    <a className="link link-hover"><p className='my-4'> 012 34 5677</p></a> 
     <a className="link link-hover"><p>edu@234gmail.com</p></a>
     
   </div> 
